@@ -1,0 +1,503 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:rop-gov-om:TrafficInformation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="TrafficInformation_ASE" targetNamespace="urn:rop-gov-om:TrafficInformation">
+<wsdl:types>
+<xsd:schema xmlns:tns="urn:rop-gov-om:TrafficInformation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:rop-gov-om:TrafficInformation">
+<xsd:element name="TrafficInformation" type="tns:TrafficInformation"/>
+<xsd:element name="TrafficInformationResponse" type="tns:TrafficInformationResponse"/>
+<xsd:complexType name="TrafficInformation">
+<xsd:sequence>
+<xsd:element name="Request" nillable="true" type="tns:TrafficInformationRequest"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TrafficInformationRequest">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="personNumber" nillable="true" type="tns:personNumber"/>
+<xsd:element minOccurs="0" name="civilNumber" nillable="true" type="tns:civilNumber"/>
+<xsd:element minOccurs="0" name="cardExpiryDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="passportNumber" nillable="true" type="tns:passportNumber"/>
+<xsd:element minOccurs="0" name="passportCountryCode" nillable="true" type="tns:passportCountryCode"/>
+<xsd:element minOccurs="0" name="passportExpiryDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="visaNumber" nillable="true" type="tns:visaNumber"/>
+<xsd:element minOccurs="0" name="drivingLicenseNumber" nillable="true" type="tns:drivingLicenseNumber"/>
+<xsd:element minOccurs="0" name="firstIssueDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="companyRegistrationNumber" nillable="true" type="tns:companyRegistrationNumber"/>
+<xsd:element minOccurs="0" name="internalOrganizationNumber" nillable="true" type="tns:internalOrganizationNumber"/>
+<xsd:element minOccurs="0" name="registrationCode" nillable="true" type="tns:registrationCode"/>
+<xsd:element minOccurs="0" name="registrationNumber" nillable="true" type="tns:registrationNumber"/>
+<xsd:element minOccurs="0" name="registrationRegion" nillable="true" type="tns:registrationRegion"/>
+<xsd:element minOccurs="0" name="foreignCountryCode" nillable="true" type="tns:foreignCountryCode"/>
+<xsd:element minOccurs="0" name="foreignStateCode" nillable="true" type="tns:foreignStateCode"/>
+<xsd:element minOccurs="0" name="chassisNumber" nillable="true" type="tns:chassisNumber"/>
+<xsd:element minOccurs="0" name="engineNumber" nillable="true" type="tns:engineNumber"/>
+<xsd:element minOccurs="0" name="vehiclePK" nillable="true" type="tns:vehiclePK"/>
+<xsd:element name="requesterId" nillable="true" type="tns:requesterId"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:simpleType name="personNumber">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{9}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="civilNumber">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{0,9}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="passportNumber">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="25"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="passportCountryCode">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="3"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="visaNumber">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{0,10}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="drivingLicenseNumber">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{0,9}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="companyRegistrationNumber">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="10"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="internalOrganizationNumber">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="8"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="registrationCode">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="10"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="registrationNumber">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{0,6}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="registrationRegion">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="LOC"/>
+<xsd:enumeration value="FOR"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="foreignCountryCode">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="784"/>
+<xsd:enumeration value="634"/>
+<xsd:enumeration value="682"/>
+<xsd:enumeration value="048"/>
+<xsd:enumeration value="414"/>
+<xsd:enumeration value="720"/>
+<xsd:enumeration value="400"/>
+<xsd:enumeration value="422"/>
+<xsd:enumeration value="760"/>
+<xsd:enumeration value="818"/>
+<xsd:maxLength value="10"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="foreignStateCode">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="10"/>
+<xsd:enumeration value="11"/>
+<xsd:enumeration value="12"/>
+<xsd:enumeration value="13"/>
+<xsd:enumeration value="14"/>
+<xsd:enumeration value="15"/>
+<xsd:enumeration value="16"/>
+<xsd:enumeration value="AZ"/>
+<xsd:enumeration value="DU"/>
+<xsd:enumeration value="SH"/>
+<xsd:enumeration value="AJ"/>
+<xsd:enumeration value="UQ"/>
+<xsd:enumeration value="FU"/>
+<xsd:enumeration value="RK"/>
+<xsd:enumeration value="أبوظبي"/>
+<xsd:enumeration value="دبي"/>
+<xsd:enumeration value="الشارقة"/>
+<xsd:enumeration value="عجمان"/>
+<xsd:enumeration value="أم القيوين"/>
+<xsd:enumeration value="الفجيرة"/>
+<xsd:enumeration value="رأس الخيمة"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="chassisNumber">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="20"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="engineNumber">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="20"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="vehiclePK">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="\d{0,8}"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="requesterId">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="TrafficInformationResponse">
+<xsd:sequence>
+<xsd:element name="Response" nillable="true" type="tns:TrafficInformationResponse2"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TrafficInformationResponse2">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="Vehicle" nillable="true" type="tns:Vehicle"/>
+<xsd:element minOccurs="0" name="DrivingLicense" nillable="true" type="tns:DrivingLicense"/>
+<xsd:element minOccurs="0" name="Offences" nillable="true" type="tns:Offences"/>
+<xsd:element minOccurs="0" name="Status" nillable="true" type="tns:Status_Lng"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Vehicle">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="Details" nillable="true" type="tns:Vehicle2"/>
+<xsd:element minOccurs="0" name="Registration" nillable="true" type="tns:Registration"/>
+<xsd:element minOccurs="0" name="Insurance" nillable="true" type="tns:Insurance"/>
+<xsd:element minOccurs="0" name="Mortgage" nillable="true" type="tns:Mortgage"/>
+<xsd:element minOccurs="0" name="Owner" nillable="true" type="tns:Owner"/>
+<xsd:element minOccurs="0" name="Status" nillable="true" type="tns:Status_Lng"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Vehicle2">
+<xsd:sequence>
+<xsd:element name="vehiclePK" nillable="true" type="xsd:string"/>
+<xsd:element name="chassisNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="engineNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="registrationCode" nillable="true" type="xsd:string"/>
+<xsd:element name="registrationNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignCountryCode" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignCountryDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignCountryDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignStateCode" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignStateDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="foreignStateDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="VehicleType" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="VehicleMake" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="VehicleModel" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="vehicleModelYear" nillable="true" type="xsd:string"/>
+<xsd:element name="ManufacturedCountry" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="manufacturedYear" nillable="true" type="xsd:string"/>
+<xsd:element name="colourCode_1" nillable="true" type="xsd:string"/>
+<xsd:element name="colourCode_2" nillable="true" type="xsd:string"/>
+<xsd:element name="colourCode_3" nillable="true" type="xsd:string"/>
+<xsd:element name="coloursDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="coloursDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="tareMass" nillable="true" type="xsd:string"/>
+<xsd:element name="cargoMass" nillable="true" type="xsd:string"/>
+<xsd:element name="passengerMaxQuantity" nillable="true" type="xsd:string"/>
+<xsd:element name="engineCapacity" nillable="true" type="xsd:string"/>
+<xsd:element name="engineCylinderQuantity" nillable="true" type="xsd:string"/>
+<xsd:element name="FuelType" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="axleQuantity" nillable="true" type="xsd:string"/>
+<xsd:element name="Usage" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="vehicleBlacklistFlag" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleBlacklistReasonDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleBlacklistReasonDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleBlacklistActionDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleBlacklistActionDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="exporterName" nillable="true" type="xsd:string"/>
+<xsd:element name="exportCountryDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="exportCountryDesc_en" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CodeDesc">
+<xsd:sequence>
+<xsd:element name="code" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Registration">
+<xsd:sequence>
+<xsd:element name="RegistrationType" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="registrationIssueDate" nillable="true" type="xsd:string"/>
+<xsd:element name="registrationExpiryDate" nillable="true" type="xsd:string"/>
+<xsd:element name="registrationFirstIssueDate" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationCode_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationCode_en" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationFornMiss" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationTypeDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="previousRegistrationTypeDesc_en" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Insurance">
+<xsd:sequence>
+<xsd:element name="insuranceCompanyCode_crn" nillable="true" type="xsd:string"/>
+<xsd:element name="insuranceCompanyCode_org" nillable="true" type="xsd:string"/>
+<xsd:element name="insuranceCompanyName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="insuranceCompanyName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="insurancePolicyNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="InsuranceType" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="insuranceStartDate" nillable="true" type="xsd:string"/>
+<xsd:element name="insuranceEndDate" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Mortgage">
+<xsd:sequence>
+<xsd:element name="mortgageeCompanyCode_crn" nillable="true" type="xsd:string"/>
+<xsd:element name="mortgageeCompanyCode_org" nillable="true" type="xsd:string"/>
+<xsd:element name="mortgageeCompanyName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="mortgageeCompanyName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="mortgageStartDate" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Owner">
+<xsd:sequence>
+<xsd:element name="civilNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="personNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="passportNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="PassportCountry" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="CompanyRegistrationNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="OrganizationNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="firstOwnerName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="firstOwnerName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="secondOwnerName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="secondOwnerName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="postBoxNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="PostOffice" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="WilayatTown" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="AddressBlockNumber" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="street" nillable="true" type="xsd:string"/>
+<xsd:element name="telephone" nillable="true" type="xsd:string"/>
+<xsd:element name="Nationality" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="BlacklistFlag" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Status_Lng">
+<xsd:sequence>
+<xsd:element name="code" nillable="true" type="tns:code2"/>
+<xsd:element name="message_en" nillable="true" type="tns:message_en"/>
+<xsd:element name="message_ar" nillable="true" type="tns:message_ar"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:simpleType name="code2">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="25"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="message_en">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="250"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="message_ar">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="250"/>
+<xsd:whiteSpace value="preserve"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="DrivingLicense">
+<xsd:sequence>
+<xsd:element name="drivingLicenseNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="tempLicenseFlag" nillable="true" type="xsd:string"/>
+<xsd:element name="fistIssueDate" nillable="true" type="xsd:string"/>
+<xsd:element name="expiryDate" nillable="true" type="xsd:string"/>
+<xsd:element name="PlaceIssued" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="birthDate" nillable="true" type="xsd:string"/>
+<xsd:element name="deathDate" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="unbounded" name="LicenseClass" nillable="true" type="tns:LicenseClass"/>
+<xsd:element maxOccurs="unbounded" name="LicenseSubClass" nillable="true" type="tns:LicenseSubClass"/>
+<xsd:element maxOccurs="unbounded" name="plantDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="unbounded" name="plantDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="currentSuspended" nillable="true" type="xsd:string"/>
+<xsd:element name="previousSuspended" nillable="true" type="xsd:string"/>
+<xsd:element name="suspendedEndDate" nillable="true" type="xsd:string"/>
+<xsd:element name="driverName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="driverName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="Nationality" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="BloodGroup" nillable="true" type="tns:CodeDesc"/>
+<xsd:element minOccurs="0" name="Status" nillable="true" type="tns:Status_Lng"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LicenseClass">
+<xsd:sequence>
+<xsd:element name="code" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LicenseSubClass">
+<xsd:sequence>
+<xsd:element name="code" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Offences">
+<xsd:sequence>
+<xsd:element name="offenderName_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="offenderName_en" nillable="true" type="xsd:string"/>
+<xsd:element name="batchNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="registrationEnd" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleType" nillable="true" type="xsd:string"/>
+<xsd:element name="vehicleMake" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="unbounded" name="vehicleColour" nillable="true" type="xsd:string"/>
+<xsd:element name="engineCapacity" nillable="true" type="xsd:string"/>
+<xsd:element name="engineCylinderQuantity" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="unbounded" name="Offence" nillable="true" type="tns:Offence"/>
+<xsd:element name="offenceFineTotal" nillable="true" type="xsd:string"/>
+<xsd:element name="offencesCount" nillable="true" type="xsd:string"/>
+<xsd:element name="offencesTotalCount" nillable="true" type="xsd:string"/>
+<xsd:element name="tors200Flag" nillable="true" type="xsd:string"/>
+<xsd:element name="fineTotal" nillable="true" type="xsd:string"/>
+<xsd:element name="gccOffencesFlag" nillable="true" type="xsd:string"/>
+<xsd:element name="municipalityOffencesFlag" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="Status" nillable="true" type="tns:Status_Lng"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Offence">
+<xsd:sequence>
+<xsd:element name="torNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="torDesc_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="torDesc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="torGCCNumber" nillable="true" type="xsd:string"/>
+<xsd:element name="torType" nillable="true" type="xsd:string"/>
+<xsd:element name="occuranceDate" nillable="true" type="xsd:string"/>
+<xsd:element name="occuranceTime" nillable="true" type="xsd:string"/>
+<xsd:element name="occuranceCountryCode" nillable="true" type="xsd:string"/>
+<xsd:element name="OccurancePlace" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="OccuranceSubPlace" nillable="true" type="tns:CodeDesc"/>
+<xsd:element name="Plate" nillable="true" type="tns:Plate"/>
+<xsd:element name="torFineMinimum" nillable="true" type="xsd:string"/>
+<xsd:element name="torImage" nillable="true" type="xsd:string"/>
+<xsd:element name="isPaid" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Plate">
+<xsd:sequence>
+<xsd:element name="type_en" nillable="true" type="xsd:string"/>
+<xsd:element name="type_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="code_en" nillable="true" type="xsd:string"/>
+<xsd:element name="code_ar" nillable="true" type="xsd:string"/>
+<xsd:element name="number" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="TrafficInformation_ASE_PortType_TrafficInformationResponse">
+<wsdl:part name="parameters" element="tns:TrafficInformationResponse"> </wsdl:part>
+</wsdl:message>
+<wsdl:message name="TrafficInformation_ASE_PortType_TrafficInformation">
+<wsdl:part name="parameters" element="tns:TrafficInformation"> </wsdl:part>
+</wsdl:message>
+<wsdl:portType name="TrafficInformation_ASE_PortType">
+<wsdl:operation name="TrafficInformation">
+<wsdl:input message="tns:TrafficInformation_ASE_PortType_TrafficInformation"> </wsdl:input>
+<wsdl:output message="tns:TrafficInformation_ASE_PortType_TrafficInformationResponse"> </wsdl:output>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="TrafficInformation_Entities_ws_provider_TrafficInformation_ASE_Binder" type="tns:TrafficInformation_ASE_PortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="TrafficInformation">
+<soap:operation soapAction="TrafficInformation_Entities_ws_provider_TrafficInformation_ASE_Binder_TrafficInformation" style="document"/>
+<wsdl:input>
+<soap:body parts="parameters" use="literal"/>
+<wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="ROP X509 Authentication, Signature and Encryption"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body parts="parameters" use="literal"/>
+<wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="ROP X509 Authentication, Signature and Encryption"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="TrafficInformation_Entities.ws.provider.TrafficInformation_ASE">
+<wsdl:port name="TrafficInformation_Entities_ws_provider_TrafficInformation_ASE_Port" binding="tns:TrafficInformation_Entities_ws_provider_TrafficInformation_ASE_Binder">
+<soap:address location="https://10.26.10.6/ws/NRS/ws/TrafficInformation_Entities.ws.provider:TrafficInformation_ASE/TrafficInformation_Entities_ws_provider_TrafficInformation_ASE_Port"/>
+</wsdl:port>
+</wsdl:service>
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" Name="ROP X509 Authentication, Signature and Encryption" wsu:Id="ROP_X509Authentication_Signature_Encryption">
+<wsp:ExactlyOne>
+<wsp:All>
+<sp:AsymmetricBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<wsp:Policy>
+<sp:InitiatorToken>
+<wsp:Policy>
+<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<sp:WssX509PkiPathV1Token10/>
+</wsp:Policy>
+</sp:X509Token>
+</wsp:Policy>
+</sp:InitiatorToken>
+<sp:RecipientToken>
+<wsp:Policy>
+<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<sp:WssX509PkiPathV1Token10/>
+</wsp:Policy>
+</sp:X509Token>
+</wsp:Policy>
+</sp:RecipientToken>
+<sp:AlgorithmSuite>
+<wsp:Policy>
+<sp:TripleDesRsa15/>
+</wsp:Policy>
+</sp:AlgorithmSuite>
+<sp:Layout>
+<wsp:Policy>
+<sp:Strict/>
+</wsp:Policy>
+</sp:Layout>
+<sp:IncludeTimestamp/>
+<sp:ProtectTokens/>
+<sp:OnlySignEntireHeadersAndBody/>
+</wsp:Policy>
+</sp:AsymmetricBinding>
+<sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<wsp:Policy>
+<sp:MustSupportRefIssuerSerial/>
+<sp:MustSupportRefThumbprint/>
+<sp:RequireSignatureConfirmation/>
+</wsp:Policy>
+</sp:Wss11>
+<sp:Wss10 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<wsp:Policy>
+<sp:MustSupportRefIssuerSerial/>
+</wsp:Policy>
+</sp:Wss10>
+<sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<sp:Body/>
+</sp:SignedParts>
+<sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<sp:Body/>
+</sp:EncryptedParts>
+</wsp:All>
+</wsp:ExactlyOne>
+</wsp:Policy>
+</wsdl:definitions>
