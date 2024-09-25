@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PersonInformation_WSSP_ASE" 
+	targetNamespace="urn:rop-gov-om:person"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soapjms="http://www.w3.org/2010/soapjms/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="urn:rop-gov-om:person"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:rop-gov-om:person"
+			xmlns:tns="urn:rop-gov-om:person"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="PersonInformation" type="tns:PersonInformation"/>
+			<xsd:element name="PersonInformationResponse" type="tns:PersonInformationResponse"/>
+			<xsd:complexType name="PersonInformation">
+				<xsd:sequence>
+					<xsd:element name="PersonRequest" nillable="true" type="tns:PersonRequest"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PersonRequest">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="crn" nillable="true" type="tns:crn"/>
+					<xsd:element minOccurs="0" name="cardSN" nillable="true" type="tns:cardSN"/>
+					<xsd:element minOccurs="0" name="cardExpiryDate" nillable="true" type="xsd:date"/>
+					<xsd:element minOccurs="0" name="birthDate" nillable="true" type="xsd:date"/>
+					<xsd:element minOccurs="0" name="visa" nillable="true" type="tns:visa"/>
+					<xsd:element minOccurs="0" name="passportNumber" nillable="true" type="tns:passportNumber"/>
+					<xsd:element minOccurs="0" name="passportIssuedCountry" nillable="true" type="tns:passportIssuedCountry"/>
+					<xsd:element minOccurs="0" name="passportExpiryDate" nillable="true" type="xsd:date"/>
+					<xsd:element minOccurs="0" name="crnOfRequest" nillable="true" type="tns:crnOfRequest"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="crn">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="9"/>
+					<xsd:fractionDigits value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="cardSN">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="50"/>
+					<xsd:whiteSpace value="preserve"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="visa">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="25"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="passportNumber">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="25"/>
+					<xsd:whiteSpace value="preserve"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="passportIssuedCountry">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="3"/>
+					<xsd:fractionDigits value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="crnOfRequest">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:totalDigits value="9"/>
+					<xsd:fractionDigits value="0"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="PersonInformationResponse">
+				<xsd:sequence>
+					<xsd:element name="Response" nillable="true" type="tns:Response"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Response">
+				<xsd:sequence>
+					<xsd:element name="Person" nillable="true" type="tns:Person"/>
+					<xsd:element name="Status" nillable="true" type="tns:Status_Lng"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Person">
+				<xsd:sequence>
+					<xsd:element name="ID_Card" nillable="true" type="tns:ID_Card"/>
+					<xsd:element name="Passports" nillable="true" type="tns:Passports"/>
+					<xsd:element name="Visa" nillable="true" type="tns:Visa"/>
+					<xsd:element name="Death" nillable="true" type="tns:Death"/>
+					<xsd:element name="Relations" nillable="true" type="tns:Relations"/>
+					<xsd:element name="Address" nillable="true" type="tns:Address2"/>
+					<xsd:element name="Biometrics" nillable="true" type="tns:Biometrics"/>
+					<xsd:element name="Naturalization" nillable="true" type="tns:Naturalization"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ID_Card">
+				<xsd:sequence>
+					<xsd:element name="civilNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfExpiry" nillable="true" type="xsd:string"/>
+					<xsd:element name="cardType" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfIssue" nillable="true" type="xsd:string"/>
+					<xsd:element name="cardSerialNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="cardStatus" nillable="true" type="xsd:string"/>
+					<xsd:element name="cardSubStatus" nillable="true" type="xsd:string"/>
+					<xsd:element name="Nationality" nillable="true" type="tns:Nationality"/>
+					<xsd:element name="Birth" nillable="true" type="tns:Birth"/>
+					<xsd:element name="Gender" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Name" nillable="true" type="tns:Name"/>
+					<xsd:element name="Occupation" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Sponsor" nillable="true" type="tns:Sponsor"/>
+					<xsd:element name="Address" nillable="true" type="tns:Address"/>
+					<xsd:element name="Photo" nillable="true" type="tns:Photo"/>
+					<xsd:element name="Signature" nillable="true" type="tns:Signature"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Nationality">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="code_num" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Birth">
+				<xsd:sequence>
+					<xsd:element name="dateOfBirth" nillable="true" type="xsd:string"/>
+					<xsd:element name="Country" nillable="true" type="tns:Country"/>
+					<xsd:element name="Wilayat" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Town" nillable="true" type="tns:Town"/>
+					<xsd:element name="Governorate" nillable="true" type="tns:CodeDesc"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="code_num" nillable="true" type="xsd:string"/>
+					<xsd:element name="abbrv" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CodeDesc">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Town">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="abroad" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Name">
+				<xsd:sequence>
+					<xsd:element name="title_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="title_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_1_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_1_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_2_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_2_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_3_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_3_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_4_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_4_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_5_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_5_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_6_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_6_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Sponsor">
+				<xsd:sequence>
+					<xsd:element name="id" nillable="true" type="xsd:string"/>
+					<xsd:element name="type" nillable="true" type="xsd:string"/>
+					<xsd:element name="personName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="personName_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="orgName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="orgName_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Address">
+				<xsd:sequence>
+					<xsd:element name="Wilayat" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Town" nillable="true" type="tns:CodeDesc"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Photo">
+				<xsd:sequence>
+					<xsd:element name="loRes" nillable="true" type="xsd:anyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Signature">
+				<xsd:sequence>
+					<xsd:element name="image" nillable="true" type="xsd:anyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Passports">
+				<xsd:sequence>
+					<xsd:element name="civilNumber" nillable="true" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" name="Passport" nillable="true" type="tns:PassportType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="PassportType">
+				<xsd:sequence>
+					<xsd:element name="passportNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfIssue" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfExpiry" nillable="true" type="xsd:string"/>
+					<xsd:element name="Country" nillable="true" type="tns:Country2"/>
+					<xsd:element name="Type" nillable="true" type="tns:CodeDesc"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country2">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="abbrv" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Visa">
+				<xsd:sequence>
+					<xsd:element name="civilNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="visaNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfIssue" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfExpiry" nillable="true" type="xsd:string"/>
+					<xsd:element name="cancellationDate" nillable="true" type="xsd:string"/>
+					<xsd:element name="Type" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Sponsor" nillable="true" type="tns:Sponsor2"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Sponsor2">
+				<xsd:sequence>
+					<xsd:element name="id" nillable="true" type="xsd:string"/>
+					<xsd:element name="type" nillable="true" type="xsd:string"/>
+					<xsd:element name="personName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="personName_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="orgName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="orgName_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="Address" nillable="true" type="tns:SponsorAddress"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="SponsorAddress">
+				<xsd:sequence>
+					<xsd:element name="Country" nillable="true" type="tns:Country3"/>
+					<xsd:element name="Wilayat" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Town" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="stateProvince" nillable="true" type="xsd:string"/>
+					<xsd:element name="city" nillable="true" type="xsd:string"/>
+					<xsd:element name="buildingNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="wayNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="blockNumber_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="blockNumber_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="laneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="streetName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="streetName_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="poBox" nillable="true" type="xsd:string"/>
+					<xsd:element name="postalCode" nillable="true" type="xsd:string"/>
+					<xsd:element name="PostalOffice" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="telephoneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="mobileNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="emailAddress" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country3">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="abbrv" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Death">
+				<xsd:sequence>
+					<xsd:element name="dateOfDeath" nillable="true" type="xsd:string"/>
+					<xsd:element name="Country" nillable="true" type="tns:Country4"/>
+					<xsd:element name="Town" nillable="true" type="tns:Town2"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country4">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="code_num" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Town2">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="abroad" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Relations">
+				<xsd:sequence>
+					<xsd:element name="maritalStatus_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="maritalStatus_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="deathStatus" nillable="true" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" name="Relation" nillable="true" type="tns:RelationType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="RelationType">
+				<xsd:sequence>
+					<xsd:element name="civilNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="type" nillable="true" type="xsd:string"/>
+					<xsd:element name="gender" nillable="true" type="xsd:string"/>
+					<xsd:element name="reasonOfEnd" nillable="true" type="xsd:string"/>
+					<xsd:element name="deathStatus" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="name_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Address2">
+				<xsd:sequence>
+					<xsd:element name="Work" nillable="true" type="tns:AddressType"/>
+					<xsd:element name="Current" nillable="true" type="tns:AddressType"/>
+					<xsd:element name="Permanent" nillable="true" type="tns:AddressType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="AddressType">
+				<xsd:sequence>
+					<xsd:element name="Type" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Country" nillable="true" type="tns:Country5"/>
+					<xsd:element name="Governorate" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Wilayat" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="Town" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="stateAbroad" nillable="true" type="xsd:string"/>
+					<xsd:element name="city" nillable="true" type="xsd:string"/>
+					<xsd:element name="buildingNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="wayNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="blockNumber_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="blockNumber_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="laneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="streetName_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="streetName_ar" nillable="true" type="xsd:string"/>
+					<xsd:element name="poBox" nillable="true" type="xsd:string"/>
+					<xsd:element name="postalCode" nillable="true" type="xsd:string"/>
+					<xsd:element name="PostalOffice" nillable="true" type="tns:CodeDesc"/>
+					<xsd:element name="telephoneNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="mobileNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="emailAddress" nillable="true" type="xsd:string"/>
+					<xsd:element name="electricityAccount" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Country5">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="xsd:string"/>
+					<xsd:element name="abbrv" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_en" nillable="true" type="xsd:string"/>
+					<xsd:element name="desc_ar" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Biometrics">
+				<xsd:sequence>
+					<xsd:element name="dateOfCapture" nillable="true" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" name="Fingerprint" nillable="true" type="tns:Fingerprint"/>
+					<xsd:element name="Photo" nillable="true" type="tns:Photo2"/>
+					<xsd:element name="Signature" nillable="true" type="tns:Signature2"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Fingerprint">
+				<xsd:sequence>
+					<xsd:element name="WSQ" nillable="true" type="xsd:anyType"/>
+					<xsd:element name="index" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Photo2">
+				<xsd:sequence>
+					<xsd:element name="hiRes" nillable="true" type="xsd:anyType"/>
+					<xsd:element name="loRes" nillable="true" type="xsd:anyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Signature2">
+				<xsd:sequence>
+					<xsd:element name="image" nillable="true" type="xsd:anyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Naturalization">
+				<xsd:sequence>
+					<xsd:element name="naturalizationNumber" nillable="true" type="xsd:string"/>
+					<xsd:element name="dateOfNaturalization" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Status_Lng">
+				<xsd:sequence>
+					<xsd:element name="code" nillable="true" type="tns:code10"/>
+					<xsd:element name="message_en" nillable="true" type="tns:message_en"/>
+					<xsd:element name="message_ar" nillable="true" type="tns:message_ar"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="code10">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="25"/>
+					<xsd:whiteSpace value="preserve"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="message_en">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="250"/>
+					<xsd:whiteSpace value="preserve"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="message_ar">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="250"/>
+					<xsd:whiteSpace value="preserve"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="PersonInformation_WSSP_ASE_PortType_PersonInformation">
+		<wsdl:part name="parameters" element="tns:PersonInformation"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="PersonInformation_WSSP_ASE_PortType_PersonInformationResponse">
+		<wsdl:part name="parameters" element="tns:PersonInformationResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="PersonInformation_WSSP_ASE_PortType">
+		<wsdl:operation name="PersonInformation">
+			<wsdl:input message="tns:PersonInformation_WSSP_ASE_PortType_PersonInformation"></wsdl:input>
+			<wsdl:output message="tns:PersonInformation_WSSP_ASE_PortType_PersonInformationResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder" type="tns:PersonInformation_WSSP_ASE_PortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="PersonInformation">
+			<soap:operation soapAction="PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder_PersonInformation" style="document"/>
+			<wsdl:input>
+				<soap:body parts="parameters" use="literal"/>
+				<wsp:PolicyReference URI="ROP X509 Authentication, Signature and Encryption"
+					xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+				</wsdl:input>
+				<wsdl:output>
+					<soap:body parts="parameters" use="literal"/>
+					<wsp:PolicyReference URI="ROP X509 Authentication, Signature and Encryption"
+						xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+					</wsdl:output>
+				</wsdl:operation>
+			</wsdl:binding>
+			<wsdl:service name="PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE">
+				<wsdl:port name="PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Port" binding="tns:PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder">
+					<soap:address location="https://10.26.10.6/ws/NRS/ws/PersonInformation_Entities.External.ws:PersonInformation_WSSP_ASE/PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Port"/>
+				</wsdl:port>
+			</wsdl:service>
+			<wsp:Policy Name="ROP X509 Authentication, Signature and Encryption" wsu:Id="ROP_X509Authentication_Signature_Encryption"
+				xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+				xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+				<wsp:ExactlyOne>
+					<wsp:All>
+						<sp:AsymmetricBinding
+							xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+							<wsp:Policy>
+								<sp:InitiatorToken>
+									<wsp:Policy>
+										<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+											<wsp:Policy>
+												<sp:WssX509PkiPathV1Token10/>
+											</wsp:Policy>
+										</sp:X509Token>
+									</wsp:Policy>
+								</sp:InitiatorToken>
+								<sp:RecipientToken>
+									<wsp:Policy>
+										<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+											<wsp:Policy>
+												<sp:WssX509PkiPathV1Token10/>
+											</wsp:Policy>
+										</sp:X509Token>
+									</wsp:Policy>
+								</sp:RecipientToken>
+								<sp:AlgorithmSuite>
+									<wsp:Policy>
+										<sp:TripleDesRsa15/>
+									</wsp:Policy>
+								</sp:AlgorithmSuite>
+								<sp:Layout>
+									<wsp:Policy>
+										<sp:Strict/>
+									</wsp:Policy>
+								</sp:Layout>
+								<sp:IncludeTimestamp/>
+								<sp:ProtectTokens/>
+								<sp:OnlySignEntireHeadersAndBody/>
+							</wsp:Policy>
+						</sp:AsymmetricBinding>
+						<sp:Wss11
+							xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+							<wsp:Policy>
+								<sp:MustSupportRefIssuerSerial/>
+								<sp:MustSupportRefThumbprint/>
+								<sp:RequireSignatureConfirmation/>
+							</wsp:Policy>
+						</sp:Wss11>
+						<sp:Wss10
+							xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+							<wsp:Policy>
+								<sp:MustSupportRefIssuerSerial/>
+							</wsp:Policy>
+						</sp:Wss10>
+						<sp:SignedParts
+							xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+							<sp:Body/>
+						</sp:SignedParts>
+						<sp:EncryptedParts
+							xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+							<sp:Body/>
+						</sp:EncryptedParts>
+					</wsp:All>
+				</wsp:ExactlyOne>
+			</wsp:Policy>
+		</wsdl:definitions>

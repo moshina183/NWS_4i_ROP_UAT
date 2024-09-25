@@ -1,0 +1,193 @@
+2024-09-05 07:34:47,056 INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean [http-nio-9998-exec-4] Creating Service {urn:rop-gov-om:person}PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE from class om.gov.rop.person.PersonInformationWSSPASEPortType
+2024-09-05 07:34:47,081 INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean [http-nio-9998-exec-4] Creating Service {urn:rop-gov-om:person}PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE from class om.gov.rop.person.PersonInformationWSSPASEPortType
+2024-09-05 07:34:47,522 INFO org.apache.cxf.interceptor.AbstractLoggingInterceptor [http-nio-9998-exec-4] Outbound Message
+---------------------------
+ID: 2
+Address: https://proxy-tst.mtcit.gov.om/ws/NRS/PersonInformation/EXT/DIAM01
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder_PersonInformation"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1"><xenc:EncryptedKey xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" Id="EK-adb4e493-ff07-4982-a3ef-7659a1cfcc63"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p"/><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><wsse:SecurityTokenReference><ds:X509Data><ds:X509IssuerSerial><ds:X509IssuerName>CN=Device CA - 2,OU=For Staging,OU=Government,O=OMAN National PKI Center,C=OM</ds:X509IssuerName><ds:X509SerialNumber>1492360373979975064434608557797909750283685</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>B+2nti/ghSJb5ywiJY+fz4stmsQoAsNStraKItC+EURQTOCoefcM63JbGsQ/RTDbeYpbDsfDdy7qj6/Cctxq0kqNOOKvHNs4vRD7feZYwJPacSBe+3khkHiJ/V9vCXXmNVcVm7q6ksN4ygawkbodMdFFHAf50OBn2r/Y++umiaRYV/+7yMAqbR/6laaNMaVSLVINUH65nY8TNRZCIPlMXQJ0REyf3md4bF2sanR9yqubIUFO7RgbiMrqin26Ycu50M47k359prrFXGbqrho7tPk+sEGYTud0DhgO3oM8GYDBX0vzfuBTFt6x2Z/A39XOZrWrl36vWlymkcr4clgjcA==</xenc:CipherValue></xenc:CipherData><xenc:ReferenceList><xenc:DataReference URI="#ED-9fd390bf-db2d-45ab-b22e-abc36547d924"/></xenc:ReferenceList></xenc:EncryptedKey><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="SIG-62b78b0d-eaaf-4d02-81ab-912e3a707d7f"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/></ds:CanonicalizationMethod><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#id-26339534-5e95-411c-ae78-1a43f05ecb76"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>u1Es5to6sxtnJPOgF01Lmxj04yw=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>t8VopGMoysH60B5lT9UrG7BzkRAgbfXAgTq7XAFMkxm4FhU2xeG4v3FGOuEqQ5HkxC80BTp3V76XC4mlwWWkQvF+Crb+UeImSuluOhuhq+RNagR9s3lKE13o5ggTKMNv44cYdmP7xhK58QksKQQOSXRv5NGPKsVG5hsXDGcs1SUk9WGxhbWWG5tM1mo9U4+JMTHeMN75IYP2g+T7tPWHCUZsP8Blz36saa2iQnGQZO/qowTOX3STjsmlKV+mAeri1WUrTZHLce7cGyFZE9F30tarmOg4LAqTHVTib2DS0NZYxCAA7JmxmOwmrBKExraIS99un8q+pAvMPJpNtbU+Mw==</ds:SignatureValue><ds:KeyInfo Id="KI-49747093-b798-4197-86c6-7f8504310428"><wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-3d6f95ba-6c71-4e9f-a265-72431f1fd803"><ds:X509Data><ds:X509IssuerSerial><ds:X509IssuerName>CN=Device CA - 2,OU=For Staging,OU=Commercial,O=OMAN National PKI Center,C=OM</ds:X509IssuerName><ds:X509SerialNumber>1492238065903292122295678789229308858593680</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></wsse:SecurityTokenReference></ds:KeyInfo></ds:Signature><wsu:Timestamp wsu:Id="TS-d3b304cf-1fd6-4885-8e6c-2c0b693daf3a"><wsu:Created>2024-09-05T03:34:47.285Z</wsu:Created><wsu:Expires>2024-09-05T03:51:27.285Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-26339534-5e95-411c-ae78-1a43f05ecb76"><xenc:EncryptedData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" Id="ED-9fd390bf-db2d-45ab-b22e-abc36547d924" Type="http://www.w3.org/2001/04/xmlenc#Content"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc"/><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" wsse11:TokenType="http://docs.oasis-open.org/wss/oasis-wss-soap-message-security-1.1#EncryptedKey"><wsse:Reference URI="#EK-adb4e493-ff07-4982-a3ef-7659a1cfcc63"/></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>t7BYUo5/doTMeaMPNJjV/dxhs5fbjcx7AIugLVMdGJVGDtwdbmXtQwIs4/JYO+gmEOdT6bidA17hSQ701XalHl5SRXZoseVixw0eKRzYIY93p0bHe32Hx3DC5Wv30hR+tfUyBjrhPkZT6YUa6ThJT8p87eF4tPCpaNw6zUBOZPi/DYLY1I7yp3FfKyMqy8mjP0ka5PYp0sIGrIszVtzg34R0WL+4OdXbcDeO5EKvBUqQ/eIlMt7ClkNH9foJAF72tDosbuDoFL6klese7yT+J8wfbu45B2AVXafE072BTGZbACujM8EwFCoekwQmJuWa</xenc:CipherValue></xenc:CipherData></xenc:EncryptedData></soap:Body></soap:Envelope>
+--------------------------------------
+2024-09-05 07:35:07,670 INFO org.apache.cxf.interceptor.AbstractLoggingInterceptor [http-nio-9998-exec-4] Inbound Message
+----------------------------
+ID: 2
+Response-Code: 500
+Encoding: UTF-8
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], connection=[close], content-type=[text/xml; charset=UTF-8], date=[Thu, 05 Sep 2024 03:34:39 GMT], operationname=[Test], server=[Jetty(9.2.19.v20160908)], SOAPAction=["PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder_PersonInformation"], ssl_client_i_dn=[(null)], ssl_client_s_dn=[(null)], ssl_client_s_dn_cn=[(null)], ssl_client_verify=[NONE], ssl_server_s_dn_ou=[Central RA - MTCIT], transfer-encoding=[chunked]}
+Payload: <?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><soapenv:Fault><faultcode>soapenv:Server</faultcode><faultstring>[ISS.0088.9112] An Exception was thrown in the server:[ART.117.4033] Adapter Runtime (Adapter Service): Retryable Error while closing transactions at service completion Error:[ART.117.4034] Adapter Runtime (Adapter Service): Retryable Error(s) occurred while closing adapter connections.
+[ART.117.4015] Adapter Runtime (Adapter Service): Error(s) occurred while closing adapter connections..
+[ART.117.4034] Adapter Runtime (Adapter Service): Retryable Error(s) occurred while closing adapter connections.
+[ART.117.4015] Adapter Runtime (Adapter Service): Error(s) occurred while closing adapter connections.</faultstring><faultactor>https://localhost/PersonInformation</faultactor><detail><webM:exception xmlns:webM="http://www.webMethods.com/2001/10/soap/encoding">
+            <webM:className>com.wm.pkg.art.error.DetailedSystemException</webM:className>
+            <webM:message xml:lang="">[ART.117.4033] Adapter Runtime (Adapter Service): Retryable Error while closing transactions at service completion Error:[ART.117.4034] Adapter Runtime (Adapter Service): Retryable Error(s) occurred while closing adapter connections.
+[ART.117.4015] Adapter Runtime (Adapter Service): Error(s) occurred while closing adapter connections..
+[ART.117.4034] Adapter Runtime (Adapter Service): Retryable Error(s) occurred while closing adapter connections.
+[ART.117.4015] Adapter Runtime (Adapter Service): Error(s) occurred while closing adapter connections.</webM:message>
+        </webM:exception></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+--------------------------------------
+2024-09-05 07:35:07,811 INFO org.ehcache.core.EhcacheManager [http-nio-9998-exec-4] Cache 'org.apache.cxf.ws.security.tokenstore.TokenStore-984887409' created in EhcacheManager.
+2024-09-05 07:35:07,854 WARN org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor [http-nio-9998-exec-4] The request is a SOAP Fault, but it is not secured
+2024-09-05 07:35:17,438 INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean [http-nio-9998-exec-6] Creating Service {urn:rop-gov-om:person}PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE from class om.gov.rop.person.PersonInformationWSSPASEPortType
+2024-09-05 07:35:17,467 INFO org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean [http-nio-9998-exec-6] Creating Service {urn:rop-gov-om:person}PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE from class om.gov.rop.person.PersonInformationWSSPASEPortType
+2024-09-05 07:35:27,355 INFO org.apache.cxf.interceptor.AbstractLoggingInterceptor [http-nio-9998-exec-6] Outbound Message
+---------------------------
+ID: 3
+Address: https://proxy-tst.mtcit.gov.om/ws/NRS/PersonInformation/EXT/DIAM01
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=["PersonInformation_Entities_External_ws_PersonInformation_WSSP_ASE_Binder_PersonInformation"]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" soap:mustUnderstand="1"><xenc:EncryptedKey xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" Id="EK-aadeb8e6-9410-43b5-a3a7-edfd82598aa9"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p"/><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><wsse:SecurityTokenReference><ds:X509Data><ds:X509IssuerSerial><ds:X509IssuerName>CN=Device CA - 2,OU=For Staging,OU=Government,O=OMAN National PKI Center,C=OM</ds:X509IssuerName><ds:X509SerialNumber>1492360373979975064434608557797909750283685</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>jQZ0V/aVTWAlBhcgqGj1ZNnSL5SDcVFysZCJo1QjYDOy5Fr4a9+FSbNIMVk5AwXrkFTZyxZwJ4uq/gAZKPQmG2cpJuPv9kDuQWyt3gM+Myal3q0dKmnIhZGsLk9POElTsHKLYAr0g3i8+hg564rtZXmPRS5pEeXXpI/2oucmQ9KF+pxo/TF4tPxnyDTaNRgkzscqMtCHCfdmMT6tGPZLJH+XShAmaTQ6P8LBnNDM4OUIt9TeIMAzOe53L95e72x0i/6+5iV8yw6p7T5YNavqSU0KRWdks6nEGpiqIec/bakYzk4fJSZmchIKWSvtPrkUwgJpQUDLxAo/dDTlj8h5Fw==</xenc:CipherValue></xenc:CipherData><xenc:ReferenceList><xenc:DataReference URI="#ED-989f968a-c925-4e0b-88a8-9c38ce85ce8a"/></xenc:ReferenceList></xenc:EncryptedKey><ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="SIG-559c7f8d-1802-4187-aa7c-8962457021c9"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="soap"/></ds:CanonicalizationMethod><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#id-a2b00ba2-ef06-479b-94eb-33ec036c3cfd"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>V/5r9TqbhJaJwjTy7GtHm445QjE=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>aw6SV8DTb1czpPbWi6KkSfJ4HiLqyMr4q0wvAq/ZuzbGh1mfU3duJW/aXdnr/Jp95Mge/X6LfpQr4a1jF8Bx0cGs356KLQdzx+TyjEdJCrw3dLE4dbWgF5OTh9YUn/ERfFFL/NRmWjZJ8fGm07gVt/a96DcLocptUk9g+cVgyt5VVCFrrajDoO2LDLF9G9x3fWFs3aWrxslMmf7MKSx42Met9sw+/BIjsmjxEZkMU8BbzDKryFVJHY497Hn9n5++tOgmTgDriBbb0NJt99/RYopZH4fa78f7KlOx5r7STPtyrJIOegjlink/YW3hUr1CWIymveV7pkdfzDJX3/0WkA==</ds:SignatureValue><ds:KeyInfo Id="KI-ababa428-e232-4ebc-9abe-830eea91b89c"><wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="STR-a4de396d-07a3-41ec-85e8-cc1f4189ca40"><ds:X509Data><ds:X509IssuerSerial><ds:X509IssuerName>CN=Device CA - 2,OU=For Staging,OU=Commercial,O=OMAN National PKI Center,C=OM</ds:X509IssuerName><ds:X509SerialNumber>1492238065903292122295678789229308858593680</ds:X509SerialNumber></ds:X509IssuerSerial></ds:X509Data></wsse:SecurityTokenReference></ds:KeyInfo></ds:Signature><wsu:Timestamp wsu:Id="TS-cda6fe29-e47a-496a-9b0a-218d1a309c56"><wsu:Created>2024-09-05T03:35:17.625Z</wsu:Created><wsu:Expires>2024-09-05T03:51:57.625Z</wsu:Expires></wsu:Timestamp></wsse:Security></soap:Header><soap:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-a2b00ba2-ef06-479b-94eb-33ec036c3cfd"><xenc:EncryptedData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" Id="ED-989f968a-c925-4e0b-88a8-9c38ce85ce8a" Type="http://www.w3.org/2001/04/xmlenc#Content"><xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc"/><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><wsse:SecurityTokenReference xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd" wsse11:TokenType="http://docs.oasis-open.org/wss/oasis-wss-soap-message-security-1.1#EncryptedKey"><wsse:Reference URI="#EK-aadeb8e6-9410-43b5-a3a7-edfd82598aa9"/></wsse:SecurityTokenReference></ds:KeyInfo><xenc:CipherData><xenc:CipherValue>WNNL3n7UJ0sSV4oe2C4UUVs12UdRfTWtqa4XLH9vuclLOAl0pAgV+BTygiPpmmmw5X44WytP0OZaHB59GDNv5XXyK240BzRjvhfrr18xTpFYI+LcxV27h56SDbE22c/7nl9+tzk4PTzlOKSn8kR0PbTXkc/DO1Ba10XNq9fxS9kqzpU8YbdvGsMbP2ZuOTY+DShwyxoJEGO8+Q9onDq5YLIw5uidSGwzwrlq9V8lswlkT3FGrST9bheInbuz3Ou8wUJR2MCc0eg1lgB4pzceDq8QjBHBmFbq6733bjriWwKGHgoWzGv8Mpf3vxK2JgTD</xenc:CipherValue></xenc:CipherData></xenc:EncryptedData></soap:Body></soap:Envelope>
+--------------------------------------
+2024-09-05 07:35:27,361 WARN org.apache.cxf.common.logging.LogUtils [http-nio-9998-exec-6] Interceptor for {urn:rop-gov-om:person}PersonInformation_Entities.External.ws.PersonInformation_WSSP_ASE#{urn:rop-gov-om:person}PersonInformation has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: Could not send Message.
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:67)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:528)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:439)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:354)
+	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:312)
+	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:96)
+	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:140)
+	at jdk.proxy2/jdk.proxy2.$Proxy137.personInformation(Unknown Source)
+	at com.micit.rop.services.ClientStar.CallROPService(ClientStar.java:184)
+	at com.micit.rop.controllers.ControllerVer1.getPersonInformation(ControllerVer1.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:665)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: javax.net.ssl.SSLHandshakeException: SSLHandshakeException invoking https://proxy-tst.mtcit.gov.om/ws/NRS/PersonInformation/EXT/DIAM01: Remote host terminated the handshake
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1428)
+	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1409)
+	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:56)
+	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:228)
+	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
+	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:696)
+	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:63)
+	... 64 common frames omitted
+Caused by: javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+	at java.net.http/jdk.internal.net.http.common.SSLTube.checkForHandshake(SSLTube.java:595)
+	at java.net.http/jdk.internal.net.http.common.SSLTube$SSLSubscriberWrapper.onComplete(SSLTube.java:536)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.checkCompletion(SubscriberWrapper.java:472)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run1(SubscriberWrapper.java:334)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper$DownstreamPusher.run(SubscriberWrapper.java:259)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:303)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:256)
+	at java.net.http/jdk.internal.net.http.common.SubscriberWrapper.outgoing(SubscriberWrapper.java:232)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader.processData(SSLFlowDelegate.java:513)
+	at java.net.http/jdk.internal.net.http.common.SSLFlowDelegate$Reader$ReaderDownstreamPusher.run(SSLFlowDelegate.java:268)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$LockingRestartableTask.run(SequentialScheduler.java:205)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$CompleteRestartableTask.run(SequentialScheduler.java:149)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:230)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 common frames omitted
+2024-09-05 11:50:50,911 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(1621)-127.0.0.1] Application shutdown requested.
+2024-09-05 11:50:50,957 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(1621)-127.0.0.1] Pausing ProtocolHandler ["http-nio-9998"]
+2024-09-05 11:50:50,958 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(1621)-127.0.0.1] Stopping service [Tomcat]
+2024-09-05 11:50:50,961 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(1621)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-09-05 11:50:51,157 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(1621)-127.0.0.1] Stopping ProtocolHandler ["http-nio-9998"]
+2024-09-05 11:50:51,162 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(1621)-127.0.0.1] Destroying ProtocolHandler ["http-nio-9998"]
+2024-09-05 11:50:51,169 INFO org.ehcache.core.EhcacheManager [RMI TCP Connection(1621)-127.0.0.1] Cache 'org.apache.cxf.ws.security.tokenstore.TokenStore-984887409' removed from EhcacheManager.
+2024-09-05 11:50:51,187 INFO org.ehcache.core.EhcacheManager [RMI TCP Connection(1621)-127.0.0.1] Cache 'org.apache.cxf.ws.security.tokenstore.TokenStore-984887409' removed from EhcacheManager.
+2024-09-05 11:50:59,627 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2024-09-05 11:50:59,629 INFO org.springframework.boot.StartupInfoLogger [main] Starting NwsRoPservicesApplication using Java 17.0.7 on DIAM-ITAMIDWARE with PID 75908 (C:\Users\prasanth.s\Documents\workspaceDIAMTestTwoServices\NWS-ROPservices\target\classes started by prasanth.s in C:\Users\prasanth.s\Documents\workspaceDIAMTestTwoServices\NWS-ROPservices)
+2024-09-05 11:50:59,631 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-09-05 11:51:02,263 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$147d72fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-09-05 11:51:02,336 INFO org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping [main] Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-09-05 11:51:02,763 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9998 (http)
+2024-09-05 11:51:02,779 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-9998"]
+2024-09-05 11:51:02,780 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2024-09-05 11:51:02,782 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-09-05 11:51:03,060 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2024-09-05 11:51:03,061 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3330 ms
+2024-09-05 11:51:05,204 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-09-05 11:51:05,281 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-9998"]
+2024-09-05 11:51:05,319 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9998 (http) with context path ''
+2024-09-05 11:51:05,350 INFO org.springframework.boot.StartupInfoLogger [main] Started NwsRoPservicesApplication in 6.517 seconds (JVM running for 8.555)
+2024-09-05 11:51:44,781 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9998-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-05 11:51:44,781 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9998-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-09-05 11:51:44,783 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9998-exec-1] Completed initialization in 2 ms
+2024-09-05 11:52:40,146 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.micit.rop.NwsRoPservicesApplicationTests], using SpringBootContextLoader
+2024-09-05 11:52:40,160 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.micit.rop.NwsRoPservicesApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-09-05 11:52:40,161 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.micit.rop.NwsRoPservicesApplicationTests]: NwsRoPservicesApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-09-05 11:52:40,456 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.micit.rop.NwsRoPservicesApplication for test class com.micit.rop.NwsRoPservicesApplicationTests
+2024-09-05 11:52:40,915 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-09-05 11:52:40,947 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d1f74b8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@41394595, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3a0807b7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@21a5fd96, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5769e7ae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5c77053b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@26b894bd, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@287f94b1, org.springframework.test.context.event.EventPublishingTestExecutionListener@30b34287, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5489c777, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3676ac27, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@62f87c44, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@48f5bde6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@525d79f0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5149f008]
+2024-09-05 11:52:41,720 WARN org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [main] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/prasanth.s/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/prasanth.s/.m2/repository/org/json/json/20210307/json-20210307.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-09-05 11:52:41,788 INFO org.springframework.boot.StartupInfoLogger [main] Starting NwsRoPservicesApplicationTests using Java 17.0.7 on DIAM-ITAMIDWARE with PID 55832 (started by prasanth.s in C:\Users\prasanth.s\Documents\workspaceDIAMTestTwoServices\NWS-ROPservices)
+2024-09-05 11:52:41,791 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-09-05 11:52:41,812 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2024-09-05 11:52:46,740 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b5fbcd5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-09-05 11:52:46,965 INFO org.springframework.ws.soap.addressing.server.AbstractAddressingEndpointMapping [main] Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-09-05 11:52:52,721 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-09-05 11:52:53,182 INFO org.springframework.boot.StartupInfoLogger [main] Started NwsRoPservicesApplicationTests in 12.114 seconds (JVM running for 15.58)

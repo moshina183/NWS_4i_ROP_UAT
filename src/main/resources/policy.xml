@@ -1,0 +1,70 @@
+<wsp:Policy
+	Name="ROP X509 Authentication, Signature and Encryption"
+	wsu:Id="ROP_X509Authentication_Signature_Encryption"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<wsp:ExactlyOne>
+		<wsp:All>
+			<sp:AsymmetricBinding
+				xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:InitiatorToken>
+						<wsp:Policy>
+							<sp:X509Token
+								sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+								<wsp:Policy>
+									<sp:WssX509PkiPathV1Token10 />
+								</wsp:Policy>
+							</sp:X509Token>
+						</wsp:Policy>
+					</sp:InitiatorToken>
+					<sp:RecipientToken>
+						<wsp:Policy>
+							<sp:X509Token
+								sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+								<wsp:Policy>
+									<sp:WssX509PkiPathV1Token10 />
+								</wsp:Policy>
+							</sp:X509Token>
+						</wsp:Policy>
+					</sp:RecipientToken>
+					<sp:AlgorithmSuite>
+						<wsp:Policy>
+							<sp:TripleDesRsa15 />
+						</wsp:Policy>
+					</sp:AlgorithmSuite>
+					<sp:Layout>
+						<wsp:Policy>
+							<sp:Strict />
+						</wsp:Policy>
+					</sp:Layout>
+					<sp:IncludeTimestamp />
+					<sp:ProtectTokens />
+					<sp:OnlySignEntireHeadersAndBody />
+				</wsp:Policy>
+			</sp:AsymmetricBinding>
+			<sp:Wss11
+				xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:MustSupportRefIssuerSerial />
+					<sp:MustSupportRefThumbprint />
+					<sp:RequireSignatureConfirmation />
+				</wsp:Policy>
+			</sp:Wss11>
+			<sp:Wss10
+				xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:MustSupportRefIssuerSerial />
+				</wsp:Policy>
+			</sp:Wss10>
+			<sp:SignedParts
+				xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<sp:Body />
+			</sp:SignedParts>
+			<sp:EncryptedParts
+				xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<sp:Body />
+			</sp:EncryptedParts>
+		</wsp:All>
+	</wsp:ExactlyOne>
+</wsp:Policy>
